@@ -1,0 +1,121 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(270deg, #6a11cb, #2575fc, green, pink,orange,yellow,purple,red,blue,violet,indigo,cyan,magenta,lime,teal);
+  background-size: 800% 800%;
+  animation: gradientShift 15s ease infinite;
+  color: white;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364, #141E30);
+  background-size: 800% 800%;
+  animation: gradientShift 20s ease infinite;
+  color: #f1f1f1;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+}
+
+.toggle-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.toggle-btn:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 15px white;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  animation: fadeUp 1.2s ease forwards, float 3s ease-in-out infinite 1.5s;
+  opacity: 0;
+}
+
+.hero h2 {
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 0.6s;
+}
+
+.hero p {
+  margin-top: 1rem;
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeUp 1.2s ease forwards 1s;
+}
+.clubname {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+}
